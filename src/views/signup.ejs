@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <link href="/css/styles.css" rel="stylesheet">
+    <!-- <script src="js/validate_signup.js"></script> -->
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <%for(i=0;i<nav.length;i++){%>
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+        </li>
+      </ul>
+      <%}%>
+    </nav>
+  </div>
+</header>
+
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>SIGN UP HERE!!!
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <!-- <div class="col-md-5">
+        <div class="well well-lg">  -->
+          <div class="row">
+            <div class="col-sm-8">
+              
+			
+            </div>
+          </div>
+        <!-- </div>
+      </div> -->
+    </div> 
+  </div><!-- /cont -->
+  
+  <!-- <div class="container">
+    <div class="row row1">
+      <div class="col-md-8">
+        <div class="top-spacer"></div>
+      </div>
+    </div> 
+  </div> /cont -->
+  
+
+
+<div class="container" >
+  <div class="row g-3" style="align-content: center;">
+    <div class="col-md-3"></div>
+    <div class="col-md-6"> 
+      <div class="form-panel" style="width: fit-content;">
+        <!-- signup form -->
+        <div class="box signup-form  form-container">
+          <% if(typeof err != 'undefined'){%>
+            <div class="alert alert-dismissible alert-danger">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong><%= err %></strong> 
+            </div>
+          <%}%>
+          <form class="form" id="form" action="/signup" method="POST">  
+            <div class="row"  style="display: inline-flex;">
+                <div class="col">
+                    <div class="form_control">
+                        <label for="">First Name</label>
+                      
+                        <input type="text" placeholder="Enter First Name" id="first-name"  name="fname">
+                    </div>
+                </div> &nbsp;&nbsp;&nbsp;
+                <br>
+                <div class="col">
+                    <div class="form_control">
+                        <label for="">Last Name</label>
+                      
+                        <input type="text" placeholder="Enter Last Name" id="last-name"  name="lname" >
+                    </div>
+                </div>
+            </div>
+                <div class="form_control">
+                    <label for="">Email Address</label>
+                  
+                    <input type="email" placeholder="Enter Email Address" id="email" autocomplete="off" style="width:100%;" name="email">
+                   </div>
+                <div class="col">
+                  <div class="form_control">
+                    <label for="">Password</label>
+      
+                      <i class="fa fa-eye" onClick="showpsw(this)"></i>
+                      <input type="password" class="form-control" name="password" id="password" placeholder="Password" autocomplete="off" style="width:100%;" onkeyup="strength()" required>
+                    </div>
+                    <div class="ctnt"><p class="txt1"></p><p class=txt></p></div>
+                    <div class="col">
+                      <div class="form_control">
+                        <label for="">Confirm Password</label>
+                      <i class="fa fa-eye" onClick="showpswc(this)"></i>
+                        <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password" autocomplete="off" style="width:100%;" required>
+                      </div>
+                   
+                <button class="btn btn-primary" type="submit">Submit</button>
+              
+          
+          </form>
+        </div>
+        <!-- signup form -->
+      </div>
+    </div><!--/col-6-->    
+    <div class="col-md-3"></div>
+  </div>
+</div>
+                                                
+                                                                                
+<hr>
+
+<div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+      
+      <h1>Follow Us</h1>
+      <div class="btn-group">
+       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+      </div>
+    </div>
+  </div>
+</footer>
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/validate_signup.js"></script>
+	</body>
+</html>
